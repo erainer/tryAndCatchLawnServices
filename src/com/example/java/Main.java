@@ -1,5 +1,6 @@
 package com.example.java;
 import java.io.IOException;
+import java.util.InputMismatchException;
 
 import java.util.Scanner;
 public class Main {
@@ -32,18 +33,14 @@ public class Main {
             try {
                 System.out.println("What is your name?");
                 name = scanner.next();
-                cust.setName(name);
-                cust.getName();
-            } catch (Exception NullPointerException) {
+            } catch (NullPointerException exception) {
                 System.out.println("You didn't enter anything for your name.");
             }
 
             try {
                 System.out.println("What is your phone number? No dashes just 10 digits");
                 phone = scanner.next();
-                cust.setPhone(phone);
-                cust.getPhone();
-            } catch (Exception IndexOutOfBoundsException) {
+            } catch (InputMismatchException exception) {
                 System.out.println("Not a valid phone number");
             }
 
@@ -51,18 +48,14 @@ public class Main {
                 System.out.println("What is your address?");
                 scanner.nextLine();
                 address = scanner.nextLine();
-                cust.setAddress(address);
-                cust.getAddress();
-            } catch (Exception NullPointerException) {
+            } catch (NullPointerException exception){
                 System.out.println("You didn't enter anything for your address.");
             }
 
             try {
                 System.out.println("How many square feet is your lawn?");
                 sqft = scanner.nextDouble();
-                cust.setFootage(sqft);
-                cust.getFootage();
-            } catch (Exception IllegalArgumentException) {
+            } catch (InputMismatchException exception) {
                 System.out.println("Can't have letters for the footage");
             }
 
@@ -75,10 +68,8 @@ public class Main {
                 try {
                     System.out.println("What is your age?");
                     answer = scanner.nextInt();
-                    res.setSenior(answer);
-                    res.getSenior();
-                } catch (Exception NullPointerException) {
-                    System.out.println("You didn't enter anything for your age, you are disqualified from any discounts.");
+                } catch (InputMismatchException exception) {
+                    System.out.println("You didn't enter a number for your age.");
                     senior = false;
                 }
 
@@ -90,17 +81,14 @@ public class Main {
                     System.out.println("What is your property name?");
                     scanner.nextLine();
                     pName = scanner.next();
-                    com.getPropertyName();
-                } catch (Exception NullPointerException) {
+                } catch (NullPointerException exception) {
                     System.out.println("You didn't enter anything for your property name");
                 }
                 try {
                     System.out.println("How many properties do you have?");
                     many = scanner.nextInt();
-                    com.setMulti(many);
-                    com.getMulti();
-                } catch (Exception IllegalArgumentException) {
-                    System.out.println("You can only have numbers for an answer, auto disquilified for multiple properties discount.");
+                } catch (InputMismatchException exception) {
+                    System.out.println("You can only have numbers as an answer, auto disquilified for multiple properties discount.");
                 }
                 //calls a function from the commercial class
                 com.calulate(multiple, name, phone, address, sqft);

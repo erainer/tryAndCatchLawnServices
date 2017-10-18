@@ -32,14 +32,8 @@ public class Commercial extends Customer {
         return this.multipleProperties;
     }
 
-    public void setMulti(int multi) throws IndexOutOfBoundsException{
+    public void setMulti(int multi){
         boolean multiple = false;
-        //determines multiple properties discount
-        if (multi > 0) {
-            multiple = true;
-        }
-        if(multi < 0)
-            throw new IndexOutOfBoundsException();
         this.multipleProperties = multiple;
     }
 

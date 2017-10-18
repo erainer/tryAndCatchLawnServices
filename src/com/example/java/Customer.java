@@ -17,10 +17,7 @@ public class Customer {
         return customerName;
     }
     //sets name
-    public void setName(String name)  throws NullPointerException {
-        //checks the amount of characters in name
-        if(customerName == null)
-            throw new NullPointerException();
+    public void setName(String name){
         this.customerName = name;
     }
 
@@ -30,11 +27,7 @@ public class Customer {
     }
 
     //sets phone number
-    public void setPhone(String phone)throws IndexOutOfBoundsException {
-        //Check the phone number before it prints
-        int phoneNum = Integer.parseInt(customerPhone);
-        if(phoneNum > 10 || phoneNum < 10)
-            throw new IndexOutOfBoundsException();
+    public void setPhone(String phone){
         this.customerPhone = phone;
     }
 
@@ -43,10 +36,7 @@ public class Customer {
         return customerAddress;
     }
     //sets address
-    public void setAddress(String address) throws NullPointerException {
-        //checks the amount of characters in address
-        if(customerAddress == null)
-            throw new NullPointerException();
+    public void setAddress(String address){
         this.customerAddress = address;
     }
 
@@ -55,11 +45,7 @@ public class Customer {
         return squareFootage;
     }
     //sets footage
-    public void setFootage(double footage) throws IllegalArgumentException{
-        String number = Double.toString(squareFootage);
-        if (number.contains("[a-z]+")) {
-            throw new IllegalArgumentException();
-        }
+    public void setFootage(double footage){
         this.squareFootage = footage;
     }
 
